@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "io.qzz.iie.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ShulkerBoxMixin",
+    "TotemStackMixin",
+    "BucketStackMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
