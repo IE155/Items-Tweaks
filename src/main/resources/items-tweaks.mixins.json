@@ -5,7 +5,8 @@
   "mixins": [
     "ShulkerBoxMixin",
     "TotemStackMixin",
-    "BucketStackMixin"
+    "BucketStackMixin",
+    "ThrowableItemStackMixin"
   ],
   "injectors": {
     "defaultRequire": 1
