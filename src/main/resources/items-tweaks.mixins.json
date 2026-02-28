@@ -7,6 +7,7 @@
     "TotemStackMixin",
     "BucketStackMixin",
     "ThrowableItemStackMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1

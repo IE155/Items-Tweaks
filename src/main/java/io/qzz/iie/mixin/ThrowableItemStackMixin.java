@@ -22,6 +22,7 @@ public abstract class ThrowableItemStackMixin {
 
             cir.setReturnValue(64);
             return;
+
         }
 
     }
