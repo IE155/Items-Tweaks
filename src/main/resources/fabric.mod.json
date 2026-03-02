@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "items-tweaks",
+	"version": "1.0.1",
+	"name": "Items Tweaks",
+	"description": "Add crafting and items tweaks and portal eye extraction.",
+	"authors": [
+		"ie32"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/items-tweaks/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.qzz.iie.ItemsTweaks"
+		],
+		"fabric-datagen": [
+			"io.qzz.iie.ItemsTweaksDataGenerator"
+		]
+	},
+	"mixins": [
+		"items-tweaks.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": "1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
