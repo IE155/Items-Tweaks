@@ -82,3 +82,8 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+
+tasks.withType(ProcessResources).configureEach {
+	// 当资源冲突时，优先使用后发现的（通常是 generated 覆盖 resources，或者反之）
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
