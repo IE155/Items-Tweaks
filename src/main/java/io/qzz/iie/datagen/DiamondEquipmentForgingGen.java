@@ -27,16 +27,20 @@ public class DiamondEquipmentForgingGen extends FabricRecipeProvider {
                 createDiamondAxeForgingRecipe(exporter);
                 createDiamondShovelForgingRecipe(exporter);
                 createDiamondHoeForgingRecipe(exporter);
+                createDiamondHelmetForgingRecipe(exporter);
+                createDiamondChestplateForgingRecipe(exporter);
+                createDiamondLeggingsForgingRecipe(exporter);
+                createDiamondBootsForgingRecipe(exporter);
             }
 
             private void createDiamondSwordForgingRecipe(RecipeExporter exporter) {
-                // 铁剑+锻造模板+钻石=钻石剑
+                // 使用锻造模板：基础物品(铁剑) + 顶料(钻石) + 模板 = 成品(钻石剑)
                 SmithingTransformRecipeJsonBuilder.create(
-                    Ingredient.ofItems(Items.IRON_SWORD),
-                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-                    Ingredient.ofItems(Items.DIAMOND),
+                    Ingredient.ofItems(Items.IRON_SWORD),      // 基础物品 (base ingredient)
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板 (template)
+                    Ingredient.ofItems(Items.DIAMOND),         // 顶料 (addition ingredient)
                     RecipeCategory.COMBAT,
-                    Items.DIAMOND_SWORD
+                    Items.DIAMOND_SWORD                      // 成品
                 )
                 .criterion(hasItem(Items.IRON_SWORD), conditionsFromItem(Items.IRON_SWORD))
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
@@ -44,13 +48,13 @@ public class DiamondEquipmentForgingGen extends FabricRecipeProvider {
             }
 
             private void createDiamondPickaxeForgingRecipe(RecipeExporter exporter) {
-                // 铁镐+锻造模板+钻石=钻石镐
+                // 铁镐升级为钻石镐
                 SmithingTransformRecipeJsonBuilder.create(
-                    Ingredient.ofItems(Items.IRON_PICKAXE),
-                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-                    Ingredient.ofItems(Items.DIAMOND),
+                    Ingredient.ofItems(Items.IRON_PICKAXE),   // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
                     RecipeCategory.TOOLS,
-                    Items.DIAMOND_PICKAXE
+                    Items.DIAMOND_PICKAXE                    // 成品
                 )
                 .criterion(hasItem(Items.IRON_PICKAXE), conditionsFromItem(Items.IRON_PICKAXE))
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
@@ -58,13 +62,13 @@ public class DiamondEquipmentForgingGen extends FabricRecipeProvider {
             }
 
             private void createDiamondAxeForgingRecipe(RecipeExporter exporter) {
-                // 铁斧+锻造模板+钻石=钻石斧
+                // 铁斧升级为钻石斧
                 SmithingTransformRecipeJsonBuilder.create(
-                    Ingredient.ofItems(Items.IRON_AXE),
-                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-                    Ingredient.ofItems(Items.DIAMOND),
+                    Ingredient.ofItems(Items.IRON_AXE),       // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
                     RecipeCategory.TOOLS,
-                    Items.DIAMOND_AXE
+                    Items.DIAMOND_AXE                        // 成品
                 )
                 .criterion(hasItem(Items.IRON_AXE), conditionsFromItem(Items.IRON_AXE))
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
@@ -72,13 +76,13 @@ public class DiamondEquipmentForgingGen extends FabricRecipeProvider {
             }
 
             private void createDiamondShovelForgingRecipe(RecipeExporter exporter) {
-                // 铁锹+锻造模板+钻石=钻石锹
+                // 铁锹升级为钻石锹
                 SmithingTransformRecipeJsonBuilder.create(
-                    Ingredient.ofItems(Items.IRON_SHOVEL),
-                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-                    Ingredient.ofItems(Items.DIAMOND),
+                    Ingredient.ofItems(Items.IRON_SHOVEL),    // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
                     RecipeCategory.TOOLS,
-                    Items.DIAMOND_SHOVEL
+                    Items.DIAMOND_SHOVEL                     // 成品
                 )
                 .criterion(hasItem(Items.IRON_SHOVEL), conditionsFromItem(Items.IRON_SHOVEL))
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
@@ -86,17 +90,70 @@ public class DiamondEquipmentForgingGen extends FabricRecipeProvider {
             }
 
             private void createDiamondHoeForgingRecipe(RecipeExporter exporter) {
-                // 铁锄+锻造模板+钻石=钻石锄
+                // 铁锄升级为钻石锄
                 SmithingTransformRecipeJsonBuilder.create(
-                    Ingredient.ofItems(Items.IRON_HOE),
-                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-                    Ingredient.ofItems(Items.DIAMOND),
+                    Ingredient.ofItems(Items.IRON_HOE),       // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
                     RecipeCategory.TOOLS,
-                    Items.DIAMOND_HOE
+                    Items.DIAMOND_HOE                        // 成品
                 )
                 .criterion(hasItem(Items.IRON_HOE), conditionsFromItem(Items.IRON_HOE))
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter, "diamond_hoe_from_iron_hoe");
+            }
+            
+            private void createDiamondHelmetForgingRecipe(RecipeExporter exporter) {
+                // 铁头盔升级为钻石头盔
+                SmithingTransformRecipeJsonBuilder.create(
+                    Ingredient.ofItems(Items.IRON_HELMET),       // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
+                    RecipeCategory.COMBAT,
+                    Items.DIAMOND_HELMET                        // 成品
+                )
+                .criterion(hasItem(Items.IRON_HELMET), conditionsFromItem(Items.IRON_HELMET))
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter, "diamond_helmet_from_iron_helmet");
+            }
+            
+            private void createDiamondChestplateForgingRecipe(RecipeExporter exporter) {
+                SmithingTransformRecipeJsonBuilder.create(
+                    Ingredient.ofItems(Items.IRON_CHESTPLATE),       // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
+                    RecipeCategory.COMBAT,
+                    Items.DIAMOND_CHESTPLATE                        // 成品
+                )
+                .criterion(hasItem(Items.IRON_CHESTPLATE), conditionsFromItem(Items.IRON_CHESTPLATE))
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter, "diamond_chestplate_from_iron_chestplate");
+            }
+            
+            private void createDiamondLeggingsForgingRecipe(RecipeExporter exporter) {
+                SmithingTransformRecipeJsonBuilder.create(
+                    Ingredient.ofItems(Items.IRON_LEGGINGS),       // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
+                    RecipeCategory.COMBAT,
+                    Items.DIAMOND_LEGGINGS                       // 成品
+                )
+                .criterion(hasItem(Items.IRON_LEGGINGS), conditionsFromItem(Items.IRON_LEGGINGS))
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter, "diamond_leggings_from_iron_leggings");
+            }
+            
+            private void createDiamondBootsForgingRecipe(RecipeExporter exporter) {
+                SmithingTransformRecipeJsonBuilder.create(
+                    Ingredient.ofItems(Items.IRON_BOOTS),       // 基础物品
+                    Ingredient.ofItems(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),  // 模板
+                    Ingredient.ofItems(Items.DIAMOND),        // 顶料
+                    RecipeCategory.COMBAT,
+                    Items.DIAMOND_BOOTS                       // 成品
+                )
+                .criterion(hasItem(Items.IRON_BOOTS), conditionsFromItem(Items.IRON_BOOTS))
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter, "diamond_boots_from_iron_boots");
             }
         };
     }

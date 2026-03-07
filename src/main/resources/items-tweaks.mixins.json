@@ -6,7 +6,8 @@
     "ShulkerBoxMixin",
     "TotemStackMixin",
     "BucketStackMixin",
-    "ThrowableItemStackMixin"
+    "ThrowableItemStackMixin",
+    "SmithingTableIronEquipmentMixin"
 
   ],
   "injectors": {
