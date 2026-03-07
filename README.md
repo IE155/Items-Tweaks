@@ -27,6 +27,9 @@
   - 配方: 1 个圆石 + 1 个黑色染料
   - 产出: 1 个黑曜石
 
+- **钻石合成**: 
+  - 配方: 1 个青金石 + 1 个淡蓝色染料
+  - 产出: 1 个钻石
 
 ## 模组截图
 
@@ -42,9 +45,6 @@
 - `BucketStackMixin`: 修改桶堆叠数量
 - `EndPortalFrameBlockMixin`: 实现末地传送门框架的末影之眼取出功能
 
-### 核心代码
-- `ItemsTweaks.java`: 主要功能实现
-- `MyRecipeGenerator.java`: 合成配方生成
 
 ## 安装说明
 
