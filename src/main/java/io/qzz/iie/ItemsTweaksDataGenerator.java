@@ -1,5 +1,6 @@
 package io.qzz.iie;
 
+import io.qzz.iie.datagen.DiamondEquipmentForgingGen;
 import io.qzz.iie.datagen.DiamondRecipeGen;
 import io.qzz.iie.datagen.EnderEyeRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterPickaxeRecipeGenerator;
@@ -21,6 +22,7 @@ public class ItemsTweaksDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(LeafLitterToPlanksRecipeGenerator::new);
 		pack.addProvider(ObsidianRecipeGen::new);
 		pack.addProvider(DiamondRecipeGen::new);
+		pack.addProvider(DiamondEquipmentForgingGen::new);
 		// 保留原有的占位提供者
 		pack.addProvider(MyRecipeGenerator::new);
 	}
