@@ -27,8 +27,7 @@ public class WoolToThreadRecipeGen extends FabricRecipeProvider {
             private void createWoolToThreadRecipe(RecipeExporter exporter) {
                 createShaped(RecipeCategory.MISC, Items.STRING, 4)
                     .input('#', Items.WHITE_WOOL)
-                    .pattern("##")
-                    .pattern("##")
+                    .pattern("#")
                     .criterion(hasItem(Items.WHITE_WOOL), conditionsFromItem(Items.WHITE_WOOL))
                     .offerTo(exporter, "string_from_white_wool");
                 
@@ -53,8 +52,7 @@ public class WoolToThreadRecipeGen extends FabricRecipeProvider {
             private void addWoolToThreadRecipe(RecipeExporter exporter, net.minecraft.item.Item woolItem, String recipeId) {
                 createShaped(RecipeCategory.MISC, Items.STRING, 4)
                     .input('#', woolItem)
-                    .pattern("##")
-                    .pattern("##")
+                    .pattern("#")
                     .criterion(hasItem(woolItem), conditionsFromItem(woolItem))
                     .offerTo(exporter, recipeId);
             }
