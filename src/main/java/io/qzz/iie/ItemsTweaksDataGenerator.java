@@ -4,6 +4,7 @@ import io.qzz.iie.datagen.EnderEyeRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterPickaxeRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterToPlanksRecipeGenerator;
 import io.qzz.iie.datagen.MyRecipeGenerator;
+import io.qzz.iie.datagen.ObsidianRecipeGen;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -17,6 +18,7 @@ public class ItemsTweaksDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(EnderEyeRecipeGenerator::new);
 		pack.addProvider(LeafLitterPickaxeRecipeGenerator::new);
 		pack.addProvider(LeafLitterToPlanksRecipeGenerator::new);
+		pack.addProvider(ObsidianRecipeGen::new);
 		// 保留原有的占位提供者
 		pack.addProvider(MyRecipeGenerator::new);
 	}
