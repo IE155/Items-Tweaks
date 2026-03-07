@@ -18,7 +18,7 @@ public class LightTorchBlock extends Block {
     }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        // 检查方块是否可以放置在指定位置（这里使用通用检查）
+        // 检查方块是否可以放置在指定位置
         return world.getBlockState(pos.down()).isSolid();
     }
 }
