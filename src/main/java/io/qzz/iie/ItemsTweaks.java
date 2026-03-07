@@ -1,15 +1,11 @@
 package io.qzz.iie;
 
-import io.qzz.iie.newitems.LightTorch;
-import io.qzz.iie.newitems.LightTorchBlock;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.Item;
@@ -27,7 +23,6 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.minecraft.item.Item.Settings;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -46,24 +41,6 @@ public class ItemsTweaks implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Items Tweaks 加载成功");
-// 注册高亮度火把方块
-		LIGHT_TORCH_BLOCK = Registry.register(
-				Registries.BLOCK,
-				LIGHT_TORCH_BLOCK_KEY,
-				new LightTorchBlock(AbstractBlock.Settings.create()
-						.luminance(state -> 15) // 设置亮度为15，比普通火把(14)更亮
-						.strength(0.0f)
-						.pistonBehavior(PistonBehavior.DESTROY)
-						.ticksRandomly()
-						.nonOpaque()
-						.allowsSpawning(Blocks::never)
-						.solidBlock(Blocks::never)
-						.sounds(net.minecraft.sound.BlockSoundGroup.WOOD) // 使用正确的路径
-						.noCollision()
-						.offset(AbstractBlock.OffsetType.XZ)
-						.burnable()
-				)
-		);
 
 		LEAF_LITTER_PICKAXE = Registry.register(
 				Registries.ITEM,
@@ -76,12 +53,7 @@ public class ItemsTweaks implements ModInitializer {
 						.component(DataComponentTypes.ATTRIBUTE_MODIFIERS, Items.WOODEN_PICKAXE.getComponents().get(DataComponentTypes.ATTRIBUTE_MODIFIERS))
 				)
 		);
-// 注册新的亮光火把物品
-		LIGHT_TORCH = Registry.register(
-				Registries.ITEM,
-				LIGHT_TORCH_KEY,
-				new LightTorch(LIGHT_TORCH_BLOCK)
-		);
+
 // 注册玩家使用方块事件
 		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
 // 检查是否是方块点击

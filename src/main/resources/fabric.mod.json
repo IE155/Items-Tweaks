@@ -3,9 +3,9 @@
 	"id": "items-tweaks",
 	"version": "1.0.1",
 	"name": "Items Tweaks",
-	"description": "Add crafting and items tweaks and portal eye extraction.",
+	"description": "对原版物品进行微调.",
 	"authors": [
-		"ie32"
+		"ie155"
 	],
 	"contact": {},
 	"license": "MIT",
