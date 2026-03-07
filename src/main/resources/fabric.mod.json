@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "items-tweaks",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"name": "Items Tweaks",
 	"description": "对原版物品进行微调.",
 	"authors": [
