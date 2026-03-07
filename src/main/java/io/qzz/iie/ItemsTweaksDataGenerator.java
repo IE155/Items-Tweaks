@@ -7,6 +7,7 @@ import io.qzz.iie.datagen.LeafLitterPickaxeRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterToPlanksRecipeGenerator;
 import io.qzz.iie.datagen.MyRecipeGenerator;
 import io.qzz.iie.datagen.ObsidianRecipeGen;
+import io.qzz.iie.datagen.WoolToThreadRecipeGen;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -23,6 +24,7 @@ public class ItemsTweaksDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ObsidianRecipeGen::new);
 		pack.addProvider(DiamondRecipeGen::new);
 		pack.addProvider(DiamondEquipmentForgingGen::new);
+		pack.addProvider(WoolToThreadRecipeGen::new);
 		// 保留原有的占位提供者
 		pack.addProvider(MyRecipeGenerator::new);
 	}
