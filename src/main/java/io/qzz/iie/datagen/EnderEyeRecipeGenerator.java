@@ -33,6 +33,7 @@ public class EnderEyeRecipeGenerator extends FabricRecipeProvider {
         };
     }
 
+
     @Override
     public String getName() {
         return "Ender Eye Recipe Generator";
