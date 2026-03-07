@@ -61,6 +61,13 @@
 - `BucketStackMixin`: 修改桶堆叠数量
 - `EndPortalFrameBlockMixin`: 实现末地传送门框架的末影之眼取出功能
 
+### 数据生成
+- `ObsidianRecipeGen`: 添加黑曜石合成配方
+- `WoolToThreadRecipeGen`: 添加线合成配方
+- `LeafLitterToPlanksRecipeGenerator`: 添加枯叶合成木板配方
+- `EnderEyeRecipeGenerator`: 添加新的末影之眼合成配方
+- `DiamondEquipmentForgingGen`: 添加钻石制物品锻造配方
+- `DiamondRecipeGen`: 添加钻石合成配方
 
 ## 安装说明
 
