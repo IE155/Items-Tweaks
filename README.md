@@ -17,39 +17,39 @@
 - **不死图腾 (Totem of Undying)**: 堆叠上限从 1 提升至 64
 - **雪球(Snow Ball) 末影珍珠(Ender Pearl) 鸡蛋(Egg)**: 堆叠上限从 16 提升至 64
 
-![](image06.png)
+![](images/image06.png)
 
 ### 3. 物品合成配方
 - **末影之眼合成**: 
   - 配方: 1 个末影珍珠 + 1 个烈焰棒
   - 产出: 2 个末影之眼
 
-![](image03.png)
+![](images/image03.png)
 - **黑曜石合成**: 
   - 配方: 1 个圆石 + 1 个黑色染料
   - 产出: 1 个黑曜石
 
-![](image05.png)
+![](images/image05.png)
 - **钻石合成**: 
   - 配方: 1 个青金石 + 1 个淡蓝色染料
   - 产出: 1 个钻石
 
-![](image04.png)
+![](images/image04.png)
 - **橡木木板合成**:
   - 配方: 4 个枯叶
   - 产出: 1 个橡木木板
 
-![](image08.png)
+![](images/image08.png)
 - **线合成**:
   - 配方: 1 个羊毛(任意颜色)
   - 产出: 4 个线
 
-![](image07.png)
+![](images/image07.png)
 ## 模组截图
 ### 所有铁制装备/工具/武器都可以用这种方式升级为钻石制装备/工具/武器
-![](image01.png)
+![](images/image01.png)
 
-![](image02.png)
+![](images/image02.png)
 
 
 
