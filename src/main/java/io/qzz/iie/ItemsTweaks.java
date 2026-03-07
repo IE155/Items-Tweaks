@@ -1,5 +1,6 @@
 package io.qzz.iie;
 
+import io.qzz.iie.newitems.HardSnowBall;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.Block;
@@ -31,12 +32,15 @@ public class ItemsTweaks implements ModInitializer {
 			RegistryKeys.ITEM, Identifier.of(MOD_ID, "leaf_litter_pickaxe"));
 	public static final RegistryKey<Item> LIGHT_TORCH_KEY = RegistryKey.of(
 			RegistryKeys.ITEM, Identifier.of(MOD_ID, "light_torch"));
+	public static final RegistryKey<Item> HARD_SNOW_BALL_KEY = RegistryKey.of(
+			RegistryKeys.ITEM, Identifier.of(MOD_ID, "hard_snow_ball"));
 	public static final RegistryKey<Block> LIGHT_TORCH_BLOCK_KEY = RegistryKey.of(
 			RegistryKeys.BLOCK, Identifier.of(MOD_ID, "light_torch"));
 
 // 实例变量
 	public static Item LEAF_LITTER_PICKAXE;
 	public static Item LIGHT_TORCH;
+	public static Item HARD_SNOW_BALL;
 	public static Block LIGHT_TORCH_BLOCK;
 	@Override
 	public void onInitialize() {
@@ -52,6 +56,13 @@ public class ItemsTweaks implements ModInitializer {
 						.component(DataComponentTypes.TOOL, Items.WOODEN_PICKAXE.getComponents().get(DataComponentTypes.TOOL))
 						.component(DataComponentTypes.ATTRIBUTE_MODIFIERS, Items.WOODEN_PICKAXE.getComponents().get(DataComponentTypes.ATTRIBUTE_MODIFIERS))
 				)
+		);
+
+		// 注册硬雪球物品
+		HARD_SNOW_BALL = Registry.register(
+				Registries.ITEM,
+				HARD_SNOW_BALL_KEY,
+				new HardSnowBall(new Item.Settings().maxCount(64))
 		);
 
 // 注册玩家使用方块事件
