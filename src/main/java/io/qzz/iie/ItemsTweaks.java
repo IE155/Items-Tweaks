@@ -1,6 +1,5 @@
 package io.qzz.iie;
 
-import io.qzz.iie.newitems.HardSnowBall;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.Block;
@@ -9,9 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.ItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -24,12 +21,11 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import io.qzz.iie.newitems.LeafLitterPickaxe;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final RegistryKey<Item> LEAF_LITTER_PICKAXE_KEY = RegistryKey.of(
-			RegistryKeys.ITEM, Identifier.of(MOD_ID, "leaf_litter_pickaxe"));
 	public static final RegistryKey<Item> LIGHT_TORCH_KEY = RegistryKey.of(
 			RegistryKeys.ITEM, Identifier.of(MOD_ID, "light_torch"));
 	public static final RegistryKey<Item> HARD_SNOW_BALL_KEY = RegistryKey.of(
@@ -44,25 +40,11 @@ public class ItemsTweaks implements ModInitializer {
 	public static Block LIGHT_TORCH_BLOCK;
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Items Tweaks 加载成功");
 
 		LEAF_LITTER_PICKAXE = Registry.register(
 				Registries.ITEM,
-				LEAF_LITTER_PICKAXE_KEY,
-				new Item(new Item.Settings()
-						.registryKey(LEAF_LITTER_PICKAXE_KEY)
-						.maxCount(1)
-						.maxDamage(59)
-						.component(DataComponentTypes.TOOL, Items.WOODEN_PICKAXE.getComponents().get(DataComponentTypes.TOOL))
-						.component(DataComponentTypes.ATTRIBUTE_MODIFIERS, Items.WOODEN_PICKAXE.getComponents().get(DataComponentTypes.ATTRIBUTE_MODIFIERS))
-				)
-		);
-
-		// 注册硬雪球物品
-		HARD_SNOW_BALL = Registry.register(
-				Registries.ITEM,
-				HARD_SNOW_BALL_KEY,
-				new HardSnowBall(new Item.Settings().maxCount(64))
+				LeafLitterPickaxe.LEAF_LITTER_PICKAXE_KEY,
+				new LeafLitterPickaxe()
 		);
 
 // 注册玩家使用方块事件
@@ -110,5 +92,6 @@ public class ItemsTweaks implements ModInitializer {
 			}
 			return ActionResult.PASS;
 		});
+		LOGGER.info("Items Tweaks 加载成功");
 	}
 }
