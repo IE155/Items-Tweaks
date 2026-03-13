@@ -1,5 +1,7 @@
 # Items Tweaks 模组
 
+[![Fabric](https://img.shields.io/badge/Fabric-supported-orange.svg)](https://fabricmc.net)
+
 这是一个 Minecraft Fabric 模组，提供了一些物品使用和堆叠的调整功能。
 
 ## 功能特性
