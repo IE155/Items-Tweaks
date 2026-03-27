@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "items-tweaks:item/hard_snow_ball"
+  }
+}

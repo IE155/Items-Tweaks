@@ -22,6 +22,9 @@ import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.qzz.iie.newitems.LeafLitterPickaxe;
+import io.qzz.iie.newitems.LeafLitterSword;
+import io.qzz.iie.newitems.HardSnowBall;
+import io.qzz.iie.newitems.LightTorch;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -35,9 +38,9 @@ public class ItemsTweaks implements ModInitializer {
 
 // 实例变量
 	public static Item LEAF_LITTER_PICKAXE;
+	public static Item LEAF_LITTER_SWORD;
 	public static Item LIGHT_TORCH;
 	public static Item HARD_SNOW_BALL;
-	public static Block LIGHT_TORCH_BLOCK;
 	@Override
 	public void onInitialize() {
 
@@ -45,6 +48,24 @@ public class ItemsTweaks implements ModInitializer {
 				Registries.ITEM,
 				LeafLitterPickaxe.LEAF_LITTER_PICKAXE_KEY,
 				new LeafLitterPickaxe()
+		);
+
+		LEAF_LITTER_SWORD = Registry.register(
+				Registries.ITEM,
+				LeafLitterSword.LEAF_LITTER_SWORD_KEY,
+				new LeafLitterSword()
+		);
+
+		LIGHT_TORCH = Registry.register(
+				Registries.ITEM,
+				LightTorch.LIGHT_TORCH_KEY,
+				new LightTorch()
+		);
+
+		HARD_SNOW_BALL = Registry.register(
+				Registries.ITEM,
+				HardSnowBall.HARD_SNOW_BALL_KEY,
+				new HardSnowBall()
 		);
 
 // 注册玩家使用方块事件
