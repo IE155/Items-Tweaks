@@ -24,6 +24,19 @@ fabricApi {
 	}
 }
 
+loom {
+	// 微‌软登录配置：
+	// 1. 每次运行 runclient 自动弹出微软登录网页
+	// 2. 凭据保存在 .gradle 缓存中，不会提交到项目
+	// 3. 项目文件不包含任何令牌信息
+	runs {
+		client {
+			// 使用微软正版登录（false = 启用登录）
+			property("fabric-api.auth.microsoft.skip", "false")
+		}
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
