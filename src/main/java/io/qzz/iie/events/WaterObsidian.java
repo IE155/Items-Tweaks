@@ -119,10 +119,6 @@ public class WaterObsidian {
                 return ActionResult.PASS;
             }
 
-            // 检查背包是否有空间或准备掉落
-            ItemStack waterBottle = new ItemStack(Items.POTION);
-            waterBottle.set(DataComponentTypes.POTION_CONTENTS, PotionContentsComponent.DEFAULT);
-
             // 将哭泣的黑曜石变为普通黑曜石
             world.setBlockState(pos, Blocks.OBSIDIAN.getDefaultState(), Block.NOTIFY_ALL);
 
@@ -131,9 +127,9 @@ public class WaterObsidian {
                 // 减少玻璃瓶
                 handStack.decrement(1);
 
-                // 尝试给玩家水瓶（空水瓶）
+                // 尝试给玩家水瓶
                 ItemStack waterBottleStack = new ItemStack(Items.POTION);
-                waterBottle.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Potions.WATER));
+                waterBottleStack.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Potions.WATER));
 
                 if (!player.getInventory().insertStack(waterBottleStack)) {
                     // 如果背包满了，掉落水瓶
@@ -142,7 +138,7 @@ public class WaterObsidian {
                             player.getX(),
                             player.getY(),
                             player.getZ(),
-                            waterBottle
+                            waterBottleStack
                     );
                     world.spawnEntity(itemEntity);
                 }
