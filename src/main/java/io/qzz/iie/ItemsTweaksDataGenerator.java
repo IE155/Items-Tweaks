@@ -3,6 +3,7 @@ package io.qzz.iie;
 import io.qzz.iie.datagen.DiamondEquipmentForgingGen;
 import io.qzz.iie.datagen.DiamondRecipeGen;
 import io.qzz.iie.datagen.EnderEyeRecipeGenerator;
+import io.qzz.iie.datagen.LeafLitterAxeRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterPickaxeRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterSwordRecipeGenerator;
 import io.qzz.iie.datagen.LeafLitterToPlanksRecipeGenerator;
@@ -22,6 +23,7 @@ public class ItemsTweaksDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(EnderEyeRecipeGenerator::new);
 		pack.addProvider(LeafLitterPickaxeRecipeGenerator::new);
 		pack.addProvider(LeafLitterSwordRecipeGenerator::new);
+		pack.addProvider(LeafLitterAxeRecipeGenerator::new);
 		pack.addProvider(LeafLitterToPlanksRecipeGenerator::new);
 		pack.addProvider(ObsidianRecipeGen::new);
 		pack.addProvider(DiamondRecipeGen::new);

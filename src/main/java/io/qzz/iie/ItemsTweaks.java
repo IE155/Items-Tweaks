@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.qzz.iie.newitems.LeafLitterPickaxe;
 import io.qzz.iie.newitems.LeafLitterSword;
+import io.qzz.iie.newitems.LeafLitterAxe;
 import io.qzz.iie.newitems.HardSnowBall;
 import io.qzz.iie.newitems.LightTorch;
 import io.qzz.iie.events.WaterObsidian;
@@ -33,6 +34,7 @@ public class ItemsTweaks implements ModInitializer {
 // 实例变量
 	public static Item LEAF_LITTER_PICKAXE;
 	public static Item LEAF_LITTER_SWORD;
+	public static Item LEAF_LITTER_AXE;
 	public static Item LIGHT_TORCH;
 	public static Item HARD_SNOW_BALL;
 	
@@ -66,6 +68,12 @@ public class ItemsTweaks implements ModInitializer {
 				Registries.ITEM,
 				LeafLitterSword.LEAF_LITTER_SWORD_KEY,
 				new LeafLitterSword()
+		);
+
+		LEAF_LITTER_AXE = Registry.register(
+				Registries.ITEM,
+				LeafLitterAxe.LEAF_LITTER_AXE_KEY,
+				new LeafLitterAxe()
 		);
 
 		LIGHT_TORCH = Registry.register(
