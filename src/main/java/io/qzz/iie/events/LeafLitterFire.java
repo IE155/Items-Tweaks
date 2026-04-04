@@ -8,16 +8,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LeafLitterFire {
-
-    // 记录上次输出日志的时间,key: 位置, value: 时间戳
-    private static final Map<String, Long> lastLogTime = new HashMap<>();
-    // 日志输出冷却时间(100tick = 5秒)
-    private static final long LOG_COOLDOWN = 100;
 
     public static void registerEvents() {
         registerLeafLitterItemEntityEvent();
@@ -90,56 +83,19 @@ public class LeafLitterFire {
             totalLeafLitterCount += count;
         }
         
-        // 调试日志(带冷却机制)
-        if (totalLeafLitterCount > 0) {
-            String posKey = pos.toShortString();
-            long currentTime = world.getTime();
-            Long lastTime = lastLogTime.get(posKey);
-            
-            // 只在冷却时间过后输出日志
-            if (lastTime == null || currentTime - lastTime >= LOG_COOLDOWN) {
-                io.qzz.iie.ItemsTweaks.LOGGER.info("[LeafLitterFire] 检测到枯叶: {} 个, 位置: {}", totalLeafLitterCount, pos);
-                lastLogTime.put(posKey, currentTime);
-                
-                // 清理旧数据,避免内存泄漏
-                if (lastLogTime.size() > 200) {
-                    lastLogTime.clear();
-                }
-            }
-        }
-        
         // 如果达到或超过256个枯叶,在枯叶位置生成火焰烧毁它们
         if (totalLeafLitterCount >= 256) {
-            String posKey = pos.toShortString();
-            long currentTime = world.getTime();
-            
-            // 直接在枯叶物品所在的位置生成火焰(不受冷却限制)
+            // 直接在枯叶物品所在的位置生成火焰
             // 如果当前位置是空气,直接生成火焰
             var currentState = world.getBlockState(pos);
             if (currentState.isAir()) {
                 world.setBlockState(pos, Blocks.FIRE.getDefaultState());
-                
-                // 日志输出受冷却限制
-                Long lastTime = lastLogTime.get(posKey);
-                if (lastTime == null || currentTime - lastTime >= LOG_COOLDOWN) {
-                    io.qzz.iie.ItemsTweaks.LOGGER.info("[LeafLitterFire] 枯叶数量达到256,生成火焰! 位置: {}", pos);
-                    io.qzz.iie.ItemsTweaks.LOGGER.info("[LeafLitterFire] 在位置 {} 生成火焰", pos);
-                    lastLogTime.put(posKey, currentTime);
-                }
             } else {
                 // 如果当前位置有方块,尝试在上方生成
                 BlockPos firePos = pos.up();
                 var fireState = world.getBlockState(firePos);
                 if (fireState.isAir()) {
                     world.setBlockState(firePos, Blocks.FIRE.getDefaultState());
-                    
-                    // 日志输出受冷却限制
-                    Long lastTime = lastLogTime.get(posKey);
-                    if (lastTime == null || currentTime - lastTime >= LOG_COOLDOWN) {
-                        io.qzz.iie.ItemsTweaks.LOGGER.info("[LeafLitterFire] 枯叶数量达到256,生成火焰! 位置: {}", pos);
-                        io.qzz.iie.ItemsTweaks.LOGGER.info("[LeafLitterFire] 在位置 {} 上方生成火焰", pos);
-                        lastLogTime.put(posKey, currentTime);
-                    }
                 }
             }
         }

@@ -7,7 +7,8 @@
     "TotemStackMixin",
     "BucketStackMixin",
     "ThrowableItemStackMixin",
-    "SmithingTableIronEquipmentMixin"
+    "SmithingTableIronEquipmentMixin",
+    "LogGravityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
