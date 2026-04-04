@@ -1,7 +1,9 @@
 ![title](images/tite.png)
+
 [![Fabric](https://img.shields.io/badge/Fabric-supported-orange.svg)](https://fabricmc.net)
 [![MC](https://img.shields.io/badge/MC-1.21.11-brightgreen.svg)](https://zh.minecraft.wiki/w/Java%E7%89%881.21.11?variant=zh-cn)
 ![Static Badge](https://img.shields.io/badge/build-passing-brightgreen)
+
 # Ttems tweaks / 物品微调
 
 ## 简介 / Introduction
