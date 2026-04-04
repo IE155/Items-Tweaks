@@ -16,6 +16,8 @@ import io.qzz.iie.newitems.HardSnowBall;
 import io.qzz.iie.newitems.LightTorch;
 import io.qzz.iie.events.WaterObsidian;
 import io.qzz.iie.events.NoCdEat;
+import io.qzz.iie.events.DyeCobblestoneToObsidian;
+import io.qzz.iie.events.LeafLitterFire;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -41,6 +43,8 @@ public class ItemsTweaks implements ModInitializer {
 		// 注册事件
 		WaterObsidian.registerEvents();
 		NoCdEat.registerEvents();
+		DyeCobblestoneToObsidian.registerEvents();
+		LeafLitterFire.registerEvents();
 		
 		LOGGER.info("Items Tweaks 加载成功");
 	}
