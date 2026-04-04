@@ -216,7 +216,7 @@ Items-Tweaks/
 
 ---
 
-## 🛠️ 开发与构建 / Development & Build
+## 开发与构建 / Development & Build
 
 **English:**  
 ```bash
@@ -240,7 +240,7 @@ Items-Tweaks/
 
 ---
 
-## 📝 更新日志 / Changelog
+## 更新日志 / Changelog
 
 ### v1.0.2 (Current / 当前版本)
 **English:**
