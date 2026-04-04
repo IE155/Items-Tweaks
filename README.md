@@ -119,17 +119,6 @@ Right-click sweet berries to eat them instantly without cooldown or eating anima
 - Hold water bottle → Right-click obsidian → Get crying obsidian + empty bottle
 - Hold empty bottle → Right-click crying obsidian → Get obsidian + water bottle
 
----
-
-## Configuration
-
-Currently, the mod uses default configurations. Future versions may add a config file for customization.
-
-### Adjustable Parameters (Code Level)
-
-- Leaf litter fire threshold: Modify `totalLeafLitterCount >= 256` in `LeafLitterFire.java`
-- Detection frequency: Modify `time % 10` in `LeafLitterFire.java` (10 ticks = 0.5 seconds)
-- Log cooldown: Modify `LOG_COOLDOWN = 100` in `LeafLitterFire.java` (100 ticks = 5 seconds)
 
 ---
 
@@ -317,17 +306,6 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 
 ---
 
-## 配置说明
-
-目前,模组使用默认配置。未来版本可能会添加配置文件以进行自定义。
-
-### 可调参数(代码层面)
-
-- 枯叶火焰阈值: 修改 `LeafLitterFire.java` 中的 `totalLeafLitterCount >= 256`
-- 检测频率: 修改 `LeafLitterFire.java` 中的 `time % 10` (10 tick = 0.5秒)
-- 日志冷却: 修改 `LeafLitterFire.java` 中的 `LOG_COOLDOWN = 100` (100 tick = 5秒)
-
----
 
 ## 项目结构
 
