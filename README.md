@@ -71,7 +71,8 @@ Right-click sweet berries to eat them instantly without cooldown or eating anima
 - **落叶剑**: 用枯叶制作的战斗武器,耐久度为10
 - **发光火把**: 增强型照明工具(暂时未实现)
 - **硬雪球**: 具有特殊属性的压缩雪球(暂时未实现)
-  ![](images/image06.png)
+
+
 
 ### 3. 物品合成配方
 - **末影之眼合成**:
@@ -106,6 +107,9 @@ Right-click sweet berries to eat them instantly without cooldown or eating anima
 
 ![](images/image09.png)
 
+- **物品堆叠**
+
+![](images/image06.png)
 
 ---
 
