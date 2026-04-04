@@ -20,6 +20,7 @@ import io.qzz.iie.events.NoCdEat;
 import io.qzz.iie.events.DyeCobblestoneToObsidian;
 import io.qzz.iie.events.LeafLitterFire;
 import io.qzz.iie.events.BerryBushBootProtection;
+import io.qzz.iie.events.WebThrowEvent;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -49,6 +50,7 @@ public class ItemsTweaks implements ModInitializer {
 		DyeCobblestoneToObsidian.registerEvents();
 		LeafLitterFire.registerEvents();
 		BerryBushBootProtection.registerEvents();
+		WebThrowEvent.registerEvents();
 
 		
 		LOGGER.info("Items Tweaks 加载成功");
