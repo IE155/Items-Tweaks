@@ -172,17 +172,8 @@ Items-Tweaks/
 
 Compiled jar file location: `/build/libs/items-tweaks-<version>.jar`
 
----
 
-## Changelog
 
-### v1.0.3 (Current Version)
-- Added leaf litter auto-fire system
-- Added obsidian conversion mechanics
-- Added cobblestone to obsidian conversion
-- Added sweet berries no-cooldown eating
-- Added fire charge launcher (shoot fire charges as projectiles)
-- Added custom items (Leaf Litter tools, Light Torch, Hard Snow Ball)
 
 ---
 
@@ -376,17 +367,6 @@ Items-Tweaks/
 
 编译后的jar文件位于: `/build/libs/items-tweaks-<version>.jar`
 
----
-
-## 更新日志
-
-### v1.0.3 (当前版本)
-- 添加枯叶自燃系统
-- 添加黑曜石转换机制
-- 添加圆石变黑曜石功能
-- 添加甜浆果无冷却食用
-- 添加烈焰弹发射器(将烈焰弹作为抛射物发射)
-- 添加自定义物品(落叶工具、发光火把、硬雪球)
 
 ---
 
