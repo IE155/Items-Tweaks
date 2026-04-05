@@ -36,7 +36,16 @@ Right-click cobblestone with black dye to convert it into obsidian. Consumes one
 
 Right-click sweet berries to eat them instantly without cooldown or eating animation. Works in both survival and creative modes.
 
-### 5. Custom Items
+### 5. Fire Charge Launcher
+
+Right-click with a fire charge to launch it as a projectile instead of placing fire. The fire charge flies in the direction you're looking and explodes on impact, dealing damage and creating fire. Perfect for combat and demolition!
+
+- Launch direction: Player's line of sight
+- Explosion: Deals damage and creates fire on impact
+- Works: Both when aiming at blocks and in the air
+- Consumption: One fire charge per launch (except in creative mode)
+
+### 6. Custom Items
 
 - **Leaf Litter Pickaxe**: Crafted with leaf litter, used for gathering leaf litter efficiently
 - **Leaf Litter Sword**: Combat weapon made from leaf litter with 10 durability
@@ -119,6 +128,14 @@ Right-click sweet berries to eat them instantly without cooldown or eating anima
 - Hold water bottle → Right-click obsidian → Get crying obsidian + empty bottle
 - Hold empty bottle → Right-click crying obsidian → Get obsidian + water bottle
 
+### Fire Charge Launcher
+
+1. Hold a fire charge in your hand
+2. Right-click to launch it (works both in air and when aiming at blocks)
+3. The fire charge flies in your line of sight
+4. Explodes on impact with entities or blocks
+5. Explosion deals damage and creates fire
+6. One fire charge is consumed per launch (except in creative mode)
 
 ---
 
@@ -164,6 +181,7 @@ Compiled jar file location: `/build/libs/items-tweaks-<version>.jar`
 - Added obsidian conversion mechanics
 - Added cobblestone to obsidian conversion
 - Added sweet berries no-cooldown eating
+- Added fire charge launcher (shoot fire charges as projectiles)
 - Added custom items (Leaf Litter tools, Light Torch, Hard Snow Ball)
 
 ---
@@ -221,7 +239,16 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 
 右键甜浆果即可立即食用,无冷却时间且无进食动画。在生存和创造模式下均可使用。
 
-### 5. 自定义物品
+### 5. 烈焰弹发射器
+
+右键烈焰弹可以将其作为抛射物发射出去,而不是放置火焰。烈焰弹会沿你的视线方向飞行,击中目标后爆炸,造成伤害并生成火焰。非常适合战斗和破坏!
+
+- 发射方向: 玩家视线方向
+- 爆炸效果: 击中后造成伤害并生成火焰
+- 使用方式: 对准方块或空中均可发射
+- 消耗: 每次发射消耗一个烈焰弹(创造模式除外)
+
+### 6. 自定义物品
 
 - **落叶镐**: 用枯叶制作,用于高效收集枯叶
 - **落叶剑**: 用枯叶制作的战斗武器,耐久度为10
@@ -304,6 +331,15 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 - 手持水瓶 → 右键黑曜石 → 获得哭泣黑曜石 + 空瓶
 - 手持空瓶 → 右键哭泣黑曜石 → 获得黑曜石 + 水瓶
 
+### 烈焰弹发射器
+
+1. 手持烈焰弹
+2. 右键发射(对准方块或空中均可)
+3. 烈焰弹沿视线方向飞行
+4. 击中实体或方块后爆炸
+5. 爆炸造成伤害并生成火焰
+6. 每次发射消耗一个烈焰弹(创造模式除外)
+
 ---
 
 
@@ -349,6 +385,7 @@ Items-Tweaks/
 - 添加黑曜石转换机制
 - 添加圆石变黑曜石功能
 - 添加甜浆果无冷却食用
+- 添加烈焰弹发射器(将烈焰弹作为抛射物发射)
 - 添加自定义物品(落叶工具、发光火把、硬雪球)
 
 ---
