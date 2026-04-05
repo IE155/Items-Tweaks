@@ -1,5 +1,6 @@
 package io.qzz.iie.events;
 
+import io.qzz.iie.ItemsTweaks;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.ItemEntity;
@@ -18,14 +19,14 @@ public class LeafLitterFire {
     // 性能优化：缓存上次检测的区块，避免重复检测
     private static final Map<ServerWorld, Map<ChunkPos, Long>> lastCheckedChunks = new HashMap<>();
     
-    // 检测半径优化：从16格降至10格，减少67%的检测量
-    private static final int DETECTION_RADIUS = 10;
+    // 检测半径：扩大至16格，确保覆盖玩家周围区域
+    private static final int DETECTION_RADIUS = 16;
     
-    // 检测频率：每20tick(1秒)检查一次，平衡性能和响应速度
-    private static final int CHECK_INTERVAL = 20;
+    // 检测频率：每10tick(0.5秒)检查一次，提高响应速度
+    private static final int CHECK_INTERVAL = 10;
     
-    // 触发阈值
-    private static final int FIRE_THRESHOLD = 256;
+    // 触发阈值：降低至128，提高触发灵敏度
+    private static final int FIRE_THRESHOLD = 128;
 
     public static void registerEvents() {
         registerLeafLitterItemEntityEvent();
@@ -65,11 +66,11 @@ public class LeafLitterFire {
             for (var player : players) {
                 BlockPos playerPos = player.getBlockPos();
                 
-                // 优化后的检测范围：10格半径
+                // 扩大检测范围：16格半径
                 for (int dx = -DETECTION_RADIUS; dx <= DETECTION_RADIUS; dx++) {
                     for (int dz = -DETECTION_RADIUS; dz <= DETECTION_RADIUS; dz++) {
-                        // 优化：只检查Y轴-2到+2范围(枯叶通常堆积在地面)
-                        for (int dy = -2; dy <= 2; dy++) {
+                        // 优化：检查Y轴-8到+8范围(枯叶物品实体可能立体分布)
+                        for (int dy = -8; dy <= 8; dy++) {
                             BlockPos checkPos = playerPos.add(dx, dy, dz);
                             
                             // 性能优化：使用区块缓存避免重复检测
@@ -99,10 +100,10 @@ public class LeafLitterFire {
         ChunkPos chunkPos = new ChunkPos(pos);
         chunkCache.put(chunkPos, currentTime);
         
-        // 优化：缩小检测Box，减少不必要的实体检测
+        // 扩大检测Box范围，确保能捕获到物品实体（物品实体有碰撞体积，不会完全重叠）
         Box detectionBox = new Box(
-            pos.getX(), pos.getY(), pos.getZ(),
-            pos.getX() + 1.0, pos.getY() + 1.0, pos.getZ() + 1.0
+            pos.getX() - 0.3, pos.getY() - 0.3, pos.getZ() - 0.3,
+            pos.getX() + 1.3, pos.getY() + 1.3, pos.getZ() + 1.3
         );
         
         // 获取该区域内的所有枯叶物品实体
@@ -116,18 +117,26 @@ public class LeafLitterFire {
             return;
         }
         
+        // 调试日志：输出检测到的枯叶物品实体数量
+        ItemsTweaks.LOGGER.info("[枯叶火焰] 在位置 {} 检测到 {} 个枯叶物品实体", pos, leafLitterItems.size());
+        
         // 统计枯叶物品总数，添加提前退出优化
         int totalLeafLitterCount = 0;
         for (ItemEntity item : leafLitterItems) {
-            totalLeafLitterCount += item.getStack().getCount();
+            int count = item.getStack().getCount();
+            totalLeafLitterCount += count;
+            ItemsTweaks.LOGGER.debug("[枯叶火焰] 物品实体包含 {} 个枯叶，当前总计: {}", count, totalLeafLitterCount);
             // 性能优化：已达到阈值即可提前退出
             if (totalLeafLitterCount >= FIRE_THRESHOLD) {
                 break;
             }
         }
         
+        ItemsTweaks.LOGGER.info("[枯叶火焰] 位置 {} 总计枯叶数量: {}/{}", pos, totalLeafLitterCount, FIRE_THRESHOLD);
+        
         // 如果达到或超过阈值,在枯叶位置生成火焰烧毁它们
         if (totalLeafLitterCount >= FIRE_THRESHOLD) {
+            ItemsTweaks.LOGGER.warn("[枯叶火焰] 触发火焰生成！位置: {}, 数量: {}", pos, totalLeafLitterCount);
             spawnFireAtPosition(world, pos);
         }
     }

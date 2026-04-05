@@ -21,6 +21,8 @@ import io.qzz.iie.events.DyeCobblestoneToObsidian;
 import io.qzz.iie.events.LeafLitterFire;
 import io.qzz.iie.events.BerryBushBootProtection;
 import io.qzz.iie.events.WebThrowEvent;
+import io.qzz.iie.events.FireballThrowEvent;
+import io.qzz.iie.events.FireChargeBlockPlaceEvent;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -51,6 +53,8 @@ public class ItemsTweaks implements ModInitializer {
 		LeafLitterFire.registerEvents();
 		BerryBushBootProtection.registerEvents();
 		WebThrowEvent.registerEvents();
+		FireballThrowEvent.registerEvents();
+		FireChargeBlockPlaceEvent.registerEvents();
 
 		
 		LOGGER.info("Items Tweaks 加载成功");
