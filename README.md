@@ -45,6 +45,24 @@ Right-click with a fire charge to launch it as a projectile instead of placing f
 - Works: Both when aiming at blocks and in the air
 - Consumption: One fire charge per launch (except in creative mode)
 
+### 6. Breeze Rod Smelting
+
+Smelt a breeze rod in a furnace to obtain a blaze rod. This provides an alternative way to acquire blaze rods without visiting the Nether.
+
+- Input: 1 Breeze Rod
+- Output: 1 Blaze Rod
+- Experience: 0.7 XP
+- Smelting time: 200 ticks (10 seconds)
+
+### 7. Riptide Trident Anywhere
+
+Use a trident with the Riptide enchantment in any environment, without needing to be in water or rain. The mod automatically detects when you're holding a trident and allows the riptide effect to work anywhere.
+
+- Works: In any environment (no water or rain required)
+- Detection: Automatically checks if holding a trident
+- Compatibility: Fully compatible with vanilla riptide mechanics
+- Enchantment: Requires Riptide enchantment on trident
+
 ### 6. Custom Items
 
 - **Leaf Litter Pickaxe**: Crafted with leaf litter, used for gathering leaf litter efficiently
@@ -52,7 +70,7 @@ Right-click with a fire charge to launch it as a projectile instead of placing f
 - **Light Torch**: Enhanced lighting tool (not yet implemented)
 - **Hard Snow Ball**: Compact snow ball with special properties (not yet implemented)
 
-### 6. Crafting Recipes
+### 8. Crafting Recipes
 
 - **Eye of Ender**:
   - Recipe: 1 Ender Pearl + 1 Blaze Rod
@@ -93,6 +111,10 @@ Right-click with a fire charge to launch it as a projectile instead of placing f
 - **Item Stacking**: Optimized stack limits for various items
 
 ![](images/image06.png)
+
+- **Breeze Rod to Blaze Rod**: Smelt breeze rod in furnace to get blaze rod
+
+![](images/img10.png)
 
 ---
 
@@ -137,6 +159,20 @@ Right-click with a fire charge to launch it as a projectile instead of placing f
 5. Explosion deals damage and creates fire
 6. One fire charge is consumed per launch (except in creative mode)
 
+### Breeze Rod Smelting
+
+1. Obtain a breeze rod (dropped by Breeze mob)
+2. Place the breeze rod in a furnace
+3. Wait for smelting to complete (10 seconds)
+4. Collect the blaze rod
+
+### Riptide Trident Anywhere
+
+1. Obtain a trident with Riptide enchantment
+2. Long press right-click to charge in any environment (no water or rain needed)
+3. Release right-click to launch and enjoy riptide flight
+4. Fully compatible with all vanilla riptide mechanics
+
 ---
 
 ## Project Structure
@@ -145,11 +181,16 @@ Right-click with a fire charge to launch it as a projectile instead of placing f
 Items-Tweaks/
 ├── src/main/java/io/qzz/iie/
 │   ├── ItemsTweaks.java              # Main class
+│   ├── datagen/                       # Data generation
+│   │   └── BreezeRodSmeltingGen.java # Breeze rod smelting recipe
 │   ├── events/                        # Event system
 │   │   ├── LeafLitterFire.java       # Leaf litter fire
 │   │   ├── WaterObsidian.java        # Obsidian conversion
 │   │   ├── DyeCobblestoneToObsidian.java  # Cobblestone to obsidian
-│   │   └── NoCdEat.java              # No cooldown eat
+│   │   ├── NoCdEat.java              # No cooldown eat
+│   │   └── RiptideAnywhere.java      # Riptide trident (placeholder)
+│   ├── mixin/                         # Mixin injections
+│   │   └── TridentRiptideMixin.java  # Riptide trident Mixin
 │   └── newitems/                      # Custom items
 │       ├── LeafLitterPickaxe.java    # Leaf litter pickaxe
 │       ├── LeafLitterSword.java      # Leaf litter sword
@@ -239,6 +280,24 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 - 使用方式: 对准方块或空中均可发射
 - 消耗: 每次发射消耗一个烈焰弹(创造模式除外)
 
+### 6. 旋风棒熔炼
+
+在熔炉中熔炼旋风棒可以获得烈焰棒。这提供了一种无需前往下界就能获得烈焰棒的替代方式。
+
+- 输入: 1 个旋风棒
+- 产出: 1 个烈焰棒
+- 经验: 0.7 XP
+- 熔炼时间: 200 tick (10秒)
+
+### 7. 激流三叉戟无水使用
+
+在任何环境下都能使用带有激流附魔的三叉戟,无需在水中或雨天。模组会自动检测玩家是否手持三叉戟,并允许在任何地方使用激流效果。
+
+- 使用环境: 任意环境(无需水或雨)
+- 检测方式: 自动检测是否手持三叉戟
+- 兼容性: 完全兼容原版激流机制
+- 附魔要求: 三叉戟需要带有激流附魔
+
 ### 6. 自定义物品
 
 - **落叶镐**: 用枯叶制作,用于高效收集枯叶
@@ -246,7 +305,7 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 - **发光火把**: 增强型照明工具(暂时未实现)
 - **硬雪球**: 具有特殊属性的压缩雪球(暂时未实现)
 
-### 6. 物品合成配方
+### 8. 物品合成配方
 
 - **末影之眼合成**:
   - 配方: 1 个末影珍珠 + 1 个烈焰棒
@@ -287,6 +346,10 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 - **物品堆叠**: 优化了多种物品的堆叠上限
 
 ![](images/image06.png)
+
+- **旋风棒熔炼**: 在熔炉中熔炼旋风棒获得烈焰棒
+
+![](images/img10.png)
 
 ---
 
@@ -331,6 +394,20 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 5. 爆炸造成伤害并生成火焰
 6. 每次发射消耗一个烈焰弹(创造模式除外)
 
+### 旋风棒熔炼
+
+1. 获取旋风棒(从旋风人掉落)
+2. 将旋风棒放入熔炉
+3. 等待熔炼完成(10秒)
+4. 获得烈焰棒
+
+### 激流三叉戟无水使用
+
+1. 获取带有激流附魔的三叉戟
+2. 在任何环境下(无需水或雨)长按右键蓄力
+3. 松开右键发射,享受激流飞行
+4. 完全兼容原版激流的所有机制
+
 ---
 
 
@@ -340,11 +417,16 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 Items-Tweaks/
 ├── src/main/java/io/qzz/iie/
 │   ├── ItemsTweaks.java              # 主类
+│   ├── datagen/                       # 数据生成
+│   │   └── BreezeRodSmeltingGen.java # 旋风棒熔炼配方
 │   ├── events/                        # 事件系统
 │   │   ├── LeafLitterFire.java       # 枯叶自燃
 │   │   ├── WaterObsidian.java        # 黑曜石转换
 │   │   ├── DyeCobblestoneToObsidian.java  # 圆石变黑曜石
-│   │   └── NoCdEat.java              # 无冷却食用
+│   │   ├── NoCdEat.java              # 无冷却食用
+│   │   └── RiptideAnywhere.java      # 激流三叉戟(占位)
+│   ├── mixin/                         # Mixin注入
+│   │   └── TridentRiptideMixin.java  # 激流三叉戟Mixin
 │   └── newitems/                      # 自定义物品
 │       ├── LeafLitterPickaxe.java    # 落叶镐
 │       ├── LeafLitterSword.java      # 落叶剑
