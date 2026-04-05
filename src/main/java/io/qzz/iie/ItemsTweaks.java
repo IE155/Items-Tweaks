@@ -23,6 +23,7 @@ import io.qzz.iie.events.BerryBushBootProtection;
 import io.qzz.iie.events.WebThrowEvent;
 import io.qzz.iie.events.FireballThrowEvent;
 import io.qzz.iie.events.FireChargeBlockPlaceEvent;
+import io.qzz.iie.events.RiptideAnywhere;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -55,6 +56,7 @@ public class ItemsTweaks implements ModInitializer {
 		WebThrowEvent.registerEvents();
 		FireballThrowEvent.registerEvents();
 		FireChargeBlockPlaceEvent.registerEvents();
+		RiptideAnywhere.registerEvents();
 
 		
 		LOGGER.info("Items Tweaks 加载成功");
