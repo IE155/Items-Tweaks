@@ -176,7 +176,7 @@ Compiled jar file location: `/build/libs/items-tweaks-<version>.jar`
 
 ## Changelog
 
-### v1.0.2 (Current Version)
+### v1.0.3 (Current Version)
 - Added leaf litter auto-fire system
 - Added obsidian conversion mechanics
 - Added cobblestone to obsidian conversion
@@ -380,7 +380,7 @@ Items-Tweaks/
 
 ## 更新日志
 
-### v1.0.2 (当前版本)
+### v1.0.3 (当前版本)
 - 添加枯叶自燃系统
 - 添加黑曜石转换机制
 - 添加圆石变黑曜石功能
