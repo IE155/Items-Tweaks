@@ -141,7 +141,7 @@ Use a trident with the Riptide enchantment in any environment, without needing t
 ### Leaf Litter Fire
 
 1. Drop leaf litter items on the ground
-2. Accumulate 256 or more leaf litter items in the same block space
+2. Accumulate 128 or more leaf litter items in the same block space
 3. Fire will automatically generate and burn the items
 4. This prevents item entity lag and adds gameplay depth
 
@@ -376,7 +376,7 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 ### 枯叶自燃
 
 1. 将枯叶物品丢在地上
-2. 在同一方块空间内堆积256个或更多枯叶物品
+2. 在同一方块空间内堆积128个或更多枯叶物品
 3. 火焰会自动生成并烧毁物品
 4. 这可以防止物品实体卡顿并增加游戏深度
 
