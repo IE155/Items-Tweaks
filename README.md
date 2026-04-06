@@ -134,71 +134,6 @@ Items Tweaks 是一个 Minecraft Fabric 模组,为游戏添加了多种物品调
 4. 将模组 jar 放入 `mods` 文件夹
 5. 使用 Fabric 配置启动 Minecraft
 
----
-
-## 使用方法
-
-### 枯叶自燃
-
-1. 将枯叶物品丢在地上
-2. 在同一方块空间内堆积128个或更多枯叶物品
-3. 火焰会自动生成并烧毁物品
-4. 这可以防止物品实体卡顿并增加游戏深度
-
-### 黑曜石转换
-
-- 手持水瓶 → 右键黑曜石 → 获得哭泣黑曜石 + 空瓶
-- 手持空瓶 → 右键哭泣黑曜石 → 获得黑曜石 + 水瓶
-
-### 烈焰弹发射器
-
-1. 手持烈焰弹
-2. 右键发射(对准方块或空中均可)
-3. 烈焰弹沿视线方向飞行
-4. 击中实体或方块后爆炸
-5. 爆炸造成伤害并生成火焰
-6. 每次发射消耗一个烈焰弹(创造模式除外)
-
-### 旋风棒熔炼
-
-1. 获取旋风棒(从旋风人掉落)
-2. 将旋风棒放入熔炉
-3. 等待熔炼完成(10秒)
-4. 获得烈焰棒
-
-### 激流三叉戟无水使用
-
-1. 获取带有激流附魔的三叉戟
-2. 在任何环境下(无需水或雨)长按右键蓄力
-3. 松开右键发射,享受激流飞行
-4. 完全兼容原版激流的所有机制
-
----
-
-
-## 项目结构
-
-```
-Items-Tweaks/
-├── src/main/java/io/qzz/iie/
-│   ├── ItemsTweaks.java              # 主类
-│   ├── datagen/                       # 数据生成
-│   │   └── BreezeRodSmeltingGen.java # 旋风棒熔炼配方
-│   ├── events/                        # 事件系统
-│   │   ├── LeafLitterFire.java       # 枯叶自燃
-│   │   ├── WaterObsidian.java        # 黑曜石转换
-│   │   ├── DyeCobblestoneToObsidian.java  # 圆石变黑曜石
-│   │   ├── NoCdEat.java              # 无冷却食用
-│   │   └── RiptideAnywhere.java      # 激流三叉戟(占位)
-│   ├── mixin/                         # Mixin注入
-│   │   └── TridentRiptideMixin.java  # 激流三叉戟Mixin
-│   └── newitems/                      # 自定义物品
-│       ├── LeafLitterPickaxe.java    # 落叶镐
-│       ├── LeafLitterSword.java      # 落叶剑
-│       ├── LightTorch.java           # 发光火把
-│       └── HardSnowBall.java         # 硬雪球
-└── build.gradle                       # 构建配置
-```
 
 ---
 
@@ -223,16 +158,7 @@ Items-Tweaks/
 
 ---
 
-## 许可证
-
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件。
-
----
-
 ## 支持
 
 如果你喜欢这个模组,请考虑在 GitHub 上给它一个 ⭐!
 
----
-
-感谢使用 Items Tweaks!祝你享受增强的 Minecraft 游戏体验! 🎮
