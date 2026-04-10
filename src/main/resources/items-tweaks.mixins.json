@@ -9,7 +9,8 @@
     "ThrowableItemStackMixin",
     "SmithingTableIronEquipmentMixin",
     "LogGravityMixin",
-    "TridentRiptideMixin"
+    "TridentRiptideMixin",
+    "SwordBlockingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

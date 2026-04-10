@@ -24,6 +24,7 @@ import io.qzz.iie.events.WebThrowEvent;
 import io.qzz.iie.events.FireballThrowEvent;
 import io.qzz.iie.events.FireChargeBlockPlaceEvent;
 import io.qzz.iie.events.RiptideAnywhere;
+import io.qzz.iie.events.SwordBlocking;
 
 public class ItemsTweaks implements ModInitializer {
 	public static final String MOD_ID = "items-tweaks";
@@ -57,6 +58,7 @@ public class ItemsTweaks implements ModInitializer {
 		FireballThrowEvent.registerEvents();
 		FireChargeBlockPlaceEvent.registerEvents();
 		RiptideAnywhere.registerEvents();
+		SwordBlocking.registerEvents();
 
 		
 		LOGGER.info("Items Tweaks 加载成功");
